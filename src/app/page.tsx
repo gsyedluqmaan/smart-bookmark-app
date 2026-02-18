@@ -361,7 +361,9 @@ export default function Home() {
   const login = async () => {
     await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: "http://localhost:3000/bookmarks" },
+      options: {
+        redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/bookmarks?view=grid`,
+      },
     });
   };
 
