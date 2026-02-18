@@ -359,6 +359,8 @@ const GoogleLogo = () => (
 
 export default function Home() {
   const login = async () => {
+    console.log("SITE URL:", process.env.NEXT_PUBLIC_SITE_URL);
+
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
